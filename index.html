@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+   <h1>Coding Quiz</h1>
+   <!-- start button page -->
+ <div class="startQuiz">
+   <button class="btn btn-start btn-primary" id= "start">Start</button>
+   <button class="btn btn-highScores btn-primary" id="highScore">High Scores</button>
+   
+ </div>
+
+  
+
+      <!-- quiz box page-->
+
+      <div class="content">
+         <header> 
+         <div class="timer, hide">
+            <div class="time-left">Time Left</div>
+            <div class="timer-seconds">15</div>
+            </div>
+         </header>  
+   <div>
+         <div class= "myQuestions, hide" id="question-text"></div>   
+         <div class="options, hide">
+            <button class="btn btn-option" >answer</button>
+            <button class="btn btn-option" >answer</button>
+            <button class="btn btn-option" >answer</button>
+   </div> 
+      
+         <div class="questionCount hide">
+         <button class="btn btn-next, hide" id="next">Next</button>
+        
+      </div>
+      
+
+       <!-- result box -->
+   <div class = 'results hide'></div>
+     <div class="complete-text, hide">You have completed the quiz</div>
+     <div class="score" id="userScore"></div>
+     <div class="buttons hide">
+      <button class="btn btn-restart, hide" id="restart"> Retry Quiz</button>
+      <button class="btn btn-quit, hide" id="quit">Quit</button>
+
+   </div>
+</div>
+  
+   <script src="assets/script.js"></script>
+</body>
+</html>
