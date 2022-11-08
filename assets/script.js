@@ -123,3 +123,4 @@ var myQuestions = [
       },
   ];
 
+function endQuiz(){}
