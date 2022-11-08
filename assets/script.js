@@ -2,38 +2,63 @@
 var score= document.getElementById('userScore');
 var highScoresEl = document.getElementById('highScore');
 var startBtn = document.getElementById('start');
-var restartBtn= document.getElementById('restart');
+var restartBtn= document.getElementById('playAgain');
 var nextBtn = document.getElementById('next');
 var quitBtn= document.getElementById('quit');
 var questionText= document.getElementById('questionText');
 var answersEl = document.getElementById('options');
-var timerEl = document.getElementsByClassName('timer');
+var timerEl = document.getElementsByClassName('timer-seconds');
 var currentQuestion = 0;
 var score = 0;
 var highScores= [];
 
 
-
-
-restartBtn.addEventListener('click',restart);
+//  when the user clicks start I want the questions to appear and timer to start
+restartBtn.addEventListener('click', playAgain);
 nextBtn.addEventListener('click', next);
 quitBtn.addEventListener('click', quit);
-startBtn.addEventListener('click', start);
+startBtn.addEventListener('click', startBtn);
 
-function start(){
-  highScoresEl.classList.add('hide')
-  console.log()
-}
+
 
 
 function startGame () {
   btnStart.classList.add('hide');
   questionText.classList.add('hide')
-  showMyQuestions()
+  showMyQuestions();}
 
+  function timerCountdown() {
+    var timeLeft = 15;
+  var timeInterval = setInterval(function () {
+   
+    if (timeLeft > 1) {
+      
+      timerEl.textContent = timeLeft + ' seconds remaining';
+    
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      
+      timerEl.textContent = timeLeft + ' second remaining';
+      timeLeft--;
+    } else {
+
+      timerEl.textContent = 'Times up';
+
+      clearInterval(timeInterval);
+     
+ 
+    }
+  }, 1000);
 }
 
-function showMyQuestions(question) {
+
+function showMyQuestions() {
+  // $('#question-text').text(myQuestions[questionIndex.question]);
+  // $('#answer1').text(myQuestions[questionIndex.options[0]])
+  // $('#answer2').text(myQuestions[questionIndex.options[1]])
+  // $('#answer3').text(myQuestions[questionIndex.options[2]])
+  
+  
   questionText.innerHTML = myQuestions.question
   question.answers.forEach(answer => {
     var button = document.createElement('button')
@@ -42,15 +67,15 @@ function showMyQuestions(question) {
     if(answer.correct){
       button.dataset.correct = answer.correct
     }
-  })
-}
+
+  });
+  }
 
 function setNextQuestion (){
 
 }
-function resetState(){
-  nextBtn.classList
-}
+
+
 function selectAnswer(){
 
 }
